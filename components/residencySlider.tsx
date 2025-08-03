@@ -1,11 +1,12 @@
 "use client";
+
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import image1 from "../public/assets/r1.png";
 import image2 from "../public/assets/r2.png";
 import image3 from "../public/assets/r3.png";
-import image4 from "../public/assets/r1.png"; // duplicate for demo
+import image4 from "../public/assets/r1.png"; // duplicate image, but still valid
 
 interface Property {
   id: number;
@@ -90,11 +91,10 @@ export default function ResidencySlider() {
           Popular Residencies
         </h2>
 
-        {/* Scrollable-style visible slider */}
         <div className="flex gap-6 overflow-x-visible transition-all">
           {getVisibleProperties().map((item, index) => (
             <motion.div
-              key={item.id}
+              key={`${item.id}-${index}`} // ✅ UNIQUE KEY
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
