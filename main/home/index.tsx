@@ -8,7 +8,7 @@ import ResidencySlider from '@/components/residencySlider'
 import OurValue from '@/components/OurValue'
 import ContactUs from '@/components/ContactUs'
 import CallToAction from '@/components/CallToAction'
-import News from '@/components/page'
+
 
 
 
@@ -22,7 +22,6 @@ const Home = () => {
     <OurValue/>
     <ContactUs/>
     <CallToAction/>
-    <News/>
     <Footer/>
   
     </>
